@@ -4,7 +4,7 @@ import java.util.*;
 import org.junit.Test;
 import static junit.framework.Assert.assertEquals;
 
-public class FizzBuzzTest {
+public class FizzBuzzTests {
 
     @Test
     public void testFizz() throws Exception {
