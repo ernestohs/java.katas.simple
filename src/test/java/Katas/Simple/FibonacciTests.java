@@ -1,43 +1,52 @@
 package Katas.Simple;
 
+import java.util.Arrays;
+import java.util.Collection;
 import org.junit.Test;
-
-import java.util.HashMap;
-
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import static junit.framework.Assert.assertEquals;
 
-public class FibonacciTests
-{
+@RunWith(Parameterized.class)
+public class FibonacciTests {
+
+    @Parameterized.Parameters
+    public static Collection<Integer[]> data() {
+        return Arrays.asList(new Integer[][]{
+                {0,0},
+                {1,1},
+                {2,1},
+                {3,2},
+                {4,3},
+                {5,5},
+                {6,8},
+                {7,13},
+                {8,21},
+                {9,34},
+                {10,55},
+                {11,89},
+                {12,144},
+                {13,233},
+                {14,377},
+                {15,610},
+                {16,987},
+                {17,1597},
+                {18,2584},
+                {19,4181}
+        });
+    }
+
+    private Integer test_input;
+
+    private Integer test_expected;
+
+    public FibonacciTests(int input, int expected) {
+        test_input = input;
+        test_expected = expected;
+    }
+
     @Test
-    public void FibonacciTest() throws Exception {
-
-        Fibonacci target = new Fibonacci();
-
-        HashMap<Integer, Integer> expected = new HashMap<Integer, Integer>();
-        expected.put(0,0);
-        expected.put(1,1);
-        expected.put(2,1);
-        expected.put(3,2);
-        expected.put(4,3);
-        expected.put(5,5);
-        expected.put(6,8);
-        expected.put(7,13);
-        expected.put(8,21);
-        expected.put(9,34);
-        expected.put(10,55);
-        expected.put(11,89);
-        expected.put(12,144);
-        expected.put(13,233);
-        expected.put(14,377);
-        expected.put(15,610);
-        expected.put(16,987);
-        expected.put(17,1597);
-        expected.put(18,2584);
-        expected.put(19,4181);
-        int i = 0;
-        for ( Integer item : expected.values()){
-            Integer actual = target.Get( item );
-            assertEquals(actual, expected.get(item));
-        }
+    public void test() {
+        assertEquals(test_expected, Fibonacci.Get(test_input));
     }
 }
