@@ -2,12 +2,13 @@ package Katas.Simple;
 
 public class Fibonacci {
     public static Integer Get(Integer  n) {
-        if (n == 0) {
-            return 0;
-        } else if (n == 1) {
-            return 1;
-        } else {
-            return Get(n - 1) + Get(n - 2);
-        }
+        
+        Integer result = n; 
+        
+        if (n > 1) { // if N is 0 or 1, then we do not need to compute the value
+            result = Get(n - 1) + Get(n - 2);
+        } 
+        
+        return result;
     }
 }
