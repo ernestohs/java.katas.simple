@@ -7,6 +7,10 @@
     <groupId>Java.Katas</groupId>
     <artifactId>Java.Katas</artifactId>
     <version>1.0</version>
+    <properties>
+        <maven.compiler.source>18</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
