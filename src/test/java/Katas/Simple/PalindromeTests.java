@@ -17,9 +17,9 @@ public class PalindromeTests {
 
     @Parameterized.Parameters
     public static Collection data() {
-        return Arrays.asList(new Object[][] {
-                {"abc", false},
-                {"ada", true},
+        return Arrays.asList(new Object[][]{
+                {"abc", false}, // 0
+                {"ada", true},  // 1
                 {"aDa", true},
                 {"aDA", true},
                 {"ADA", true},
@@ -61,7 +61,12 @@ public class PalindromeTests {
                 {"God saw I was dog", true},
                 {"Dennis sinned", true},
                 {"Are we not pure? “No sir!” Panama’s moody Noriega brags. “It is garbage!” Irony dooms a man; a prisoner up to new era.", true},
-                {"Not a palindrome", false}
+                {"Not a palindrome", false},
+                {"A", false},
+                {"1", false},
+                {"", false},
+                {"............", false},
+                {null, false}
         });
     }
 
@@ -71,7 +76,7 @@ public class PalindromeTests {
     }
 
     @Test
-    public void test(){
+    public void test() {
         assertEquals(Palindrome.is(testInput), testExpected);
     }
 }
