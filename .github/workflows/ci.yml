@@ -29,7 +29,7 @@ jobs:
           cache: maven
 
       - name: Run Test Cases
-        run: mvn clean '-Dtest=*Test' -Djacoco.destFile=target/jacoco.exec test
+        run: mvn test
 
       - name: Upload jacoco exec test results
         uses: actions/upload-artifact@v2
