@@ -1,7 +1,5 @@
 # :octocat: Java Simple Coding Katas
 
-:cloud: [![Build Status](https://travis-ci.org/ernestohs/java.katas.simple.svg)](https://travis-ci.org/ernestohs/java.katas.simple)
-
 ## What is a code kata?
 A code kata is an exercise in programming which helps a programmer hone their skills through practice and repetition.
 
